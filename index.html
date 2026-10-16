@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bog‘Bon — Bosh sahifa</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M12 21v-9M12 12c0-4-3-7-8-7 0 5 3 7 8 7zM12 10c0-4 3-6 8-6 0 5-3 7-8 6z"/></symbol>
+  <symbol id="i-basket" viewBox="0 0 24 24"><path d="M4 8h16l-1.5 11h-13zM8 8a4 4 0 0 1 8 0"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.3M12 19.2v2.3M2.5 12h2.3M19.2 12h2.3M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 8.5 4.8 4.8 0 0 1 17 18z"/></symbol>
+  <symbol id="i-rain" viewBox="0 0 24 24"><path d="M7 15a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 5.5 4.8 4.8 0 0 1 17 15zM8 18l-1 3M12 18l-1 3M16 18l-1 3"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></symbol>
+  <symbol id="i-bug" viewBox="0 0 24 24"><ellipse cx="12" cy="14" rx="5" ry="6"/><path d="M9 8a3 3 0 0 1 6 0M3 12h4M17 12h4M4 19l3-2M20 19l-3-2M4 6l3 2M20 6l-3 2"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#/home" aria-label="Bog‘Bon bosh sahifa">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#3F8F4E"/><path d="M16 25v-8M16 17c0-4-3-6-7-6 0 4 2 6 7 6zM16 15c0-4 3-6 7-6 0 4-2 6-7 6z" fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Bog‘Bon
+    </a>
+    <nav class="links" aria-label="Asosiy menyu">
+      <a href="#/home" data-nav="home">Bosh sahifa</a>
+      <a href="#/ishlar" data-nav="ishlar">Ishlar</a>
+      <a href="#/bogim" data-nav="bogim">Mening bog‘im</a>
+      <a href="#/bozor" data-nav="bozor">Bozor</a>
+      <a href="#/maslahat" data-nav="maslahat">Maslahat</a>
+    </nav>
+    <div class="tools">
+      <button class="zoom" id="zoom" type="button" aria-pressed="false" aria-label="Katta shrift">A+</button>
+      <button class="chip" id="netChip" type="button" aria-live="polite"><i></i><span id="netText">Onlayn</span></button>
+      <div class="me" aria-label="Profil">B</div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ================= HOME ================= -->
+<div class="view" data-view="home">
+  <section class="hero" aria-labelledby="greet" style="margin-top:-2rem">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1 id="greet">Salom, bog‘bon!</h1>
+        <p class="sub" id="sub"></p>
+        <form class="search" id="searchForm" role="search">
+          <input id="q" type="search" placeholder="Kasallik yoki maslahat qidirish..." aria-label="Kasallik yoki maslahat qidirish" autocomplete="off">
+          <button class="btn" type="submit">Qidirish</button>
+        </form>
+      </div>
+      <svg class="orchard" viewBox="0 0 520 280" role="img" aria-label="Olma bog‘i qatorlari va quyosh">
+        <circle class="sunball" cx="420" cy="70" r="34" fill="#F2C14E"/>
+        <path d="M0 200 Q130 140 260 180 T520 160 V280 H0Z" fill="#2c5a3e"/>
+        <path d="M0 235 Q150 190 300 225 T520 210 V280 H0Z" fill="#3F8F4E"/>
+        <g id="trees"></g>
+      </svg>
+    </div>
+  </section>
+
+  <section id="results" hidden aria-live="polite">
+    <div class="wrap">
+      <div class="res-head"><h2 id="resTitle">Natijalar</h2><button type="button" id="clear">Yopish</button></div>
+      <ul class="res-list" id="resList"></ul>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-top:2rem">
+    <nav class="quick" aria-label="Tezkor amallar">
+      <a class="q" href="#/maslahat"><span class="ic"><svg class="i"><use href="#i-camera"/></svg></span>Kasallikni aniqlash</a>
+      <a class="q" href="#/ishlar" data-focus="taskName"><span class="ic"><svg class="i"><use href="#i-plus"/></svg></span>Ish qo‘shish</a>
+      <a class="q" href="#/bozor"><span class="ic"><svg class="i"><use href="#i-basket"/></svg></span>Narxlarni ko‘rish</a>
+      <a class="q" href="#/maslahat" data-focus="chatIn"><span class="ic"><svg class="i"><use href="#i-chat"/></svg></span>Agronomga yozish</a>
+    </nav>
+
+    <div class="grid">
+      <section aria-labelledby="h-tasks">
+        <div class="sec-head"><h2 id="h-tasks">Bugungi ishlar</h2><span class="count" id="count"></span></div>
+        <ul class="tasks" id="homeTasks"></ul>
+        <p style="margin-top:.8rem"><a class="more" href="#/ishlar">Barcha ishlarni ko‘rish</a></p>
+      </section>
+      <section aria-labelledby="h-gardens">
+        <div class="sec-head"><h2 id="h-gardens">Bog‘ holati</h2><a class="more" href="#/bogim">Batafsil</a></div>
+        <div class="gardens" id="homeGardens"></div>
+      </section>
+    </div>
+
+    <section class="block" aria-labelledby="h-weather">
+      <div class="sec-head"><h2 id="h-weather">Ob-havo</h2><span class="count">Namunaviy prognoz</span></div>
+      <div class="weather">
+        <div class="now"><div class="temp"><svg class="i"><use href="#i-sun"/></svg>14°</div><b>Quyoshli</b><small>Shamol 6 km/soat · Namlik 48%</small></div>
+        <div class="days" id="days"></div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-prices">
+      <div class="sec-head"><h2 id="h-prices">Bozor narxlari</h2><a class="more" href="#/bozor">Hammasi</a></div>
+      <div class="price-row" id="homePrices"></div>
+      <p class="note">Narxlar namunaviy.</p>
+    </section>
+
+    <section class="alert" id="alert" aria-live="polite">
+      <div class="ico"><svg class="i"><use href="#i-snow"/></svg></div>
+      <div class="alert-text"><b id="alertTitle"></b><span id="alertBody"></span></div>
+      <button class="btn sm" type="button" id="remind">Eslatma qo‘yish</button>
+    </section>
+  </div>
+</div>
+
+<!-- ================= ISHLAR ================= -->
+<div class="view" data-view="ishlar">
+  <div class="wrap">
+    <div class="page-title"><h1>Ishlar rejasi</h1><span class="count" id="dayCount"></span></div>
+    <div class="week" id="week" role="group" aria-label="Kunni tanlang"></div>
+    <form class="addform" id="taskForm">
+      <label class="field">Yangi ish<input id="taskName" required maxlength="60" placeholder="Masalan: daraxt tagini yumshatish"></label>
+      <label class="field">Vaqt<input id="taskTime" type="time" value="08:00" required></label>
+      <button class="btn" type="submit"><svg class="i"><use href="#i-plus"/></svg>Qo‘shish</button>
+    </form>
+    <h2 id="dayTitle" style="margin-bottom:.8rem"></h2>
+    <ul class="tasks" id="dayTasks"></ul>
+  </div>
+</div>
+
+<!-- ================= BOG'IM ================= -->
+<div class="view" data-view="bogim">
+  <div class="wrap">
+    <div class="page-title"><h1>Bog‘im</h1><span class="count" id="gSummary"></span></div>
+    <div class="gcards" id="gcards"></div>
+    <form class="gform" id="gardenForm">
+      <label class="field">Yangi bog‘ nomi<input id="gName" required maxlength="30" placeholder="Masalan: O‘rikzor"></label>
+      <label class="field">Maydon (gektar)<input id="gArea" type="number" min="0.1" step="0.1" value="0.5" required></label>
+      <button class="btn" type="submit"><svg class="i"><use href="#i-plus"/></svg>Bog‘ qo‘shish</button>
+    </form>
+  </div>
+</div>
+
+<!-- ================= BOZOR ================= -->
+<div class="view" data-view="bozor">
+  <div class="wrap">
+    <div class="page-title"><h1>Bozor narxlari</h1><span class="count">Oxirgi 7 kun · namunaviy</span></div>
+    <div class="filters" id="filters" role="group" aria-label="Saralash">
+      <button class="fbtn" type="button" data-f="all" aria-pressed="true">Hammasi</button>
+      <button class="fbtn" type="button" data-f="up" aria-pressed="false">Narxi oshganlar</button>
+      <button class="fbtn" type="button" data-f="down" aria-pressed="false">Narxi tushganlar</button>
+    </div>
+    <ul class="mlist" id="mlist"></ul>
+    <section class="sellbox" aria-labelledby="sellTitle">
+      <h2 id="sellTitle">Hosilimni sotuvga qo‘yish</h2>
+      <form id="sellForm">
+        <label class="field">Mahsulot<select id="sItem"></select></label>
+        <label class="field">Miqdor (kg)<input id="sKg" type="number" min="1" step="1" value="500" required></label>
+        <label class="field">Narx (so‘m/kg)<input id="sPrice" type="number" min="100" step="100" required></label>
+        <button class="btn" type="submit">E’lon berish</button>
+      </form>
+      <ul class="mine" id="mine"></ul>
+    </section>
+  </div>
+</div>
+
+<!-- ================= MASLAHAT ================= -->
+<div class="view" data-view="maslahat">
+  <div class="wrap">
+    <div class="page-title"><h1>Maslahat</h1><span class="count">Prototip</span></div>
+    <div class="cols">
+      <section class="panel" aria-labelledby="h-diag">
+        <h2 id="h-diag">Kasallikni rasm orqali aniqlash</h2>
+        <label class="drop" id="drop">
+          <input type="file" id="photo" accept="image/*" capture="environment">
+          <span id="dropHint"><svg class="i" style="width:2.2rem;height:2.2rem"><use href="#i-camera"/></svg><br>Barg yoki mevani suratga oling<br><small class="muted" style="font-weight:400">yoki galereyadan tanlang</small></span>
+          <img id="preview" alt="Tanlangan surat" hidden>
+        </label>
+        <button class="btn full" type="button" id="diagBtn" disabled><svg class="i"><use href="#i-bug"/></svg>Aniqlash</button>
+        <div id="diagOut" aria-live="polite"></div>
+        <p class="note" style="margin-top:0">Bu prototip: natija namunaviy. Aniq tashxis uchun agronomga murojaat qiling.</p>
+      </section>
+
+      <section class="panel chat" aria-labelledby="h-chat">
+        <div class="agr"><div class="av">A</div><div><b id="h-chat">Agronom</b><small>Odatda tez javob beradi</small></div></div>
+        <div class="msgs" id="msgs" role="log" aria-live="polite"></div>
+        <div>
+          <div class="quickrep" id="qr"><button type="button">Shira</button><button type="button">Sovuq</button><button type="button">Sug‘orish</button><button type="button">Un shudring</button></div>
+          <form class="sendrow" id="chatForm" style="margin-top:.6rem">
+            <input id="chatIn" placeholder="Savolingizni yozing..." aria-label="Savol" autocomplete="off">
+            <button class="btn" type="submit" aria-label="Yuborish"><svg class="i"><use href="#i-send"/></svg></button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer><div class="wrap">Bog‘Bon · Inson-kompyuter interfeysi, 1-topshiriq</div></footer>
+
+<nav class="tabs" aria-label="Pastki menyu">
+  <a href="#/home" data-nav="home"><svg class="i"><use href="#i-home"/></svg>Bosh</a>
+  <a href="#/ishlar" data-nav="ishlar"><svg class="i"><use href="#i-list"/></svg>Ishlar</a>
+  <a href="#/bogim" data-nav="bogim"><svg class="i"><use href="#i-leaf"/></svg>Bog‘im</a>
+  <a href="#/bozor" data-nav="bozor"><svg class="i"><use href="#i-basket"/></svg>Bozor</a>
+  <a href="#/maslahat" data-nav="maslahat"><svg class="i"><use href="#i-chat"/></svg>Maslahat</a>
+</nav>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
